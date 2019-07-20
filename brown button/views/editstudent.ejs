@@ -1,0 +1,36 @@
+
+<% include partials/header %>
+<div class="container">
+        <div class="row">
+                <h1 style="text-align:center">EDIT FORM</h1>
+            <div style="width:30%; margin: 0 auto;">    
+                <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+                    <div class="form-group">
+                            <input type="text" name="up[name]" class="form-control" value="<%= student.name %>">
+                    </div>
+                    
+                    <div class="form-group">
+                            <input type="text" name="up[age]" class="form-control" value="<%= student.age %>">
+                    </div>
+                    
+                    <div class="form-group">
+                            <input type="text" name="up[geocode]" class="form-control" value="<%= student.geocode %>">
+                    </div>
+                    
+                    <div class="form-group">
+                            <input type="text" name="up[dept]" class="form-control" value="<%= student.dept %>" >
+                    </div>
+    
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+                    
+                </form>
+                <a href="/students/show">Go Back</a>
+            </div>    
+            
+        </div>
+    </div>
+       
+<% include partials/footer %>
+

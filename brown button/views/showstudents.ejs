@@ -1,0 +1,28 @@
+
+<% include partials/header %>
+<table class="table table-bordered table-hover">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Geocode</th>
+            <th>Department</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+                <% foundstudents.forEach(function(student){ %>
+                    <tr>
+                        <td><%=student.name %></td>
+                        <td><%=student.age %></td>
+                        <td><%= student.geocode %></td>
+                        <td><%= student.dept %></td>
+                        <td><a href="/students/<%= student._id %>/edit" class="btn btn-primary">Update</a>
+                            <form action="/students/<%= student._id %>?_method=DELETE" method="POST" class="delete">
+                                <button class="btn btn-danger" >Delete</button>
+                              </form>
+                      </td>
+                    </tr>
+                    <%  }) %> 
+        </tbody>
+      </table>
+<% include partials/footer %>
+
